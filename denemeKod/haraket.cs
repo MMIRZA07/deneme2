@@ -9,10 +9,7 @@ public class haraket : MonoBehaviour
     [SerializeField] WheelCollider frontLeft;
     [SerializeField] WheelCollider backLeft;
 
-    [SerializeField] Transform frontRigthTransform;
-    [SerializeField] Transform frontLeftTransform;
-    [SerializeField] Transform backRigthTransform;
-    [SerializeField] Transform backLeftTransform;
+  
 
     public float hizlanma = 500f; //public olduðundan oyun kýsmýndan deðiþtirilebilir 
     public float frenGuc = 300f;
