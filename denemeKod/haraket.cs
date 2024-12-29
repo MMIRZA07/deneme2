@@ -53,6 +53,15 @@ public class haraket : MonoBehaviour
         backRight.brakeTorque = mevcutFrenGuc;
         backLeft.brakeTorque = mevcutFrenGuc;
 
+
+
+
+
+
+
+
+        
+
         //------DÖNME-------
         //mevcutDonmeAci = maxDonmeAci * Input.GetAxis("Horizontal"); //a ve s tuslarýný kullanýrken 
         mevcutDonmeAci = maxDonmeAci * Horizontal;//button kontrol 
