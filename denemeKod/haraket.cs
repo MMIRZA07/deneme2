@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class haraket : MonoBehaviour
 {
-    [SerializeField] WheelCollider frontRight; //serializeField sayesinde public olmayanlarý kullanabilriz 
+    [SerializeField] WheelCollider frontRight; //serializeField sayesinde public olmayanlarÃ½ kullanabilriz 
     [SerializeField] WheelCollider backRight;
     [SerializeField] WheelCollider frontLeft;
     [SerializeField] WheelCollider backLeft;
@@ -14,7 +14,7 @@ public class haraket : MonoBehaviour
     [SerializeField] Transform backRigthTransform;
     [SerializeField] Transform backLeftTransform;
 
-    public float hizlanma = 500f; //public olduðundan oyun kýsmýndan deðiþtirilebilir 
+    public float hizlanma = 500f; //public olduÃ°undan oyun kÃ½smÃ½ndan deÃ°iÃ¾tirilebilir 
     public float frenGuc = 300f;
     public float maxDonmeAci = 15f;
 
@@ -23,24 +23,24 @@ public class haraket : MonoBehaviour
     private float mevcutFrenGuc = 0f;
     private float mevcutDonmeAci = 0f;
 
-    private float hedefHorizontal = 0f; // Hedef deðeri
-    private float hedefVertical = 0f;   // Hedef deðeri
+    private float hedefHorizontal = 0f; // Hedef deÃ°eri
+    private float hedefVertical = 0f;   // Hedef deÃ°eri
 
-    private float Horizontal = 0f; // Mevcut deðer
-    private float Vertical = 0f;   // Mevcut deðer
+    private float Horizontal = 0f; // Mevcut deÃ°er
+    private float Vertical = 0f;   // Mevcut deÃ°er
 
-    public float gecisHizi = 5f; // Geçiþ hýzý
+    public float gecisHizi = 5f; // GeÃ§iÃ¾ hÃ½zÃ½
 
     private void FixedUpdate()
     {
-        Horizontal = Mathf.Lerp(Horizontal, hedefHorizontal, Time.deltaTime * gecisHizi); //Horizontal ve Vertical deðerlerini yumuþak geçiþ
+        Horizontal = Mathf.Lerp(Horizontal, hedefHorizontal, Time.deltaTime * gecisHizi); //Horizontal ve Vertical deÃ°erlerini yumuÃ¾ak geÃ§iÃ¾
         Vertical = Mathf.Lerp(Vertical, hedefVertical, Time.deltaTime * gecisHizi);
 
 
-        //mevcutHizlama = hizlanma * Input.GetAxis("Vertical"); //vertical ile w ve s tuþuna basdýðýmýzda w = 1 s = - 1 deðeri alýr  bu sayede iler ve geri yönde hýzlanma yapabiliriz 
+        //mevcutHizlama = hizlanma * Input.GetAxis("Vertical"); //vertical ile w ve s tuÃ¾una basdÃ½Ã°Ã½mÃ½zda w = 1 s = - 1 deÃ°eri alÃ½r  bu sayede iler ve geri yÃ¶nde hÃ½zlanma yapabiliriz 
         mevcutHizlama = hizlanma * Vertical; //button kontrol
 
-        //if (Input.GetKey(KeyCode.Space)) //space tuþu ile fren kullanýmý 
+        //if (Input.GetKey(KeyCode.Space)) //space tuÃ¾u ile fren kullanÃ½mÃ½ 
         //{
         //    mevcutFrenGuc = frenGuc;
         //}
@@ -56,12 +56,12 @@ public class haraket : MonoBehaviour
         backRight.brakeTorque = mevcutFrenGuc;
         backLeft.brakeTorque = mevcutFrenGuc;
 
-        //------DÖNME-------
-        //mevcutDonmeAci = maxDonmeAci * Input.GetAxis("Horizontal"); //a ve s tuslarýný kullanýrken 
+        //------DÃ–NME-------
+        //mevcutDonmeAci = maxDonmeAci * Input.GetAxis("Horizontal"); //a ve s tuslarÃ½nÃ½ kullanÃ½rken 
         mevcutDonmeAci = maxDonmeAci * Horizontal;//button kontrol 
 
-        frontRight.steerAngle = mevcutDonmeAci; //direksiyon açýsýný sað ön tekerde mevcut açý deðerine eþitle 
-        frontLeft.steerAngle = mevcutDonmeAci;  //direksiyon açýsýný sol ön tekerde mevcut açý deðerine eþitle 
+        frontRight.steerAngle = mevcutDonmeAci; //direksiyon aÃ§Ã½sÃ½nÃ½ saÃ° Ã¶n tekerde mevcut aÃ§Ã½ deÃ°erine eÃ¾itle 
+        frontLeft.steerAngle = mevcutDonmeAci;  //direksiyon aÃ§Ã½sÃ½nÃ½ sol Ã¶n tekerde mevcut aÃ§Ã½ deÃ°erine eÃ¾itle 
 
         UpdateWheel(frontRight, frontRigthTransform);
         UpdateWheel(backRight, backRigthTransform);
@@ -74,7 +74,7 @@ public class haraket : MonoBehaviour
         //Get
         Vector3 position;
         Quaternion rotation;
-        col.GetWorldPose(out position, out rotation);//fonksiyona konulan colliderin pozisyonu ve rotasyonunu buradakilere göre aktarma yapar
+        col.GetWorldPose(out position, out rotation);//fonksiyona konulan colliderin pozisyonu ve rotasyonunu buradakilere gÃ¶re aktarma yapar
 
         //Set
         trans.position = position;
